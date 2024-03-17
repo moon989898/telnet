@@ -1,0 +1,13 @@
+version: '3'
+services:
+  ssh:
+    image: rastasheep/ubuntu-sshd
+    volumes:
+      - .:/var/www/html
+  php:
+    image: php:7.4-apache
+    ports:
+      - 8080:80
+    volumes:
+      - .:/var/www/html
+    restart: always
